@@ -1,0 +1,17 @@
+{
+    "name": "badcow/fluid-interface",
+    "authors": [
+        {
+            "name": "Sam Williams",
+            "email": "sam@badcow.co"
+        }
+    ],
+    "description": "Turns methods of any non-final class that do not return anything into chainable, fluid interfaces.",
+    "license": "MIT",
+    "require": {
+
+    },
+    "autoload": {
+        "psr-0": { "": "lib/" }
+    }
+}
