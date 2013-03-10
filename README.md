@@ -8,9 +8,28 @@ Turns methods of any non-final class that do not return anything into chainable,
 This is a joke. I made this library after an argument with the senior dev who doesn't like fluent interfaces.
 If you can think of a legitimate use for this library, I would like to know.
 
+## Installation
+
+### Using composer
+
+   //composer.json
+   {
+       "require": {
+           "badcow/fluent-interface": "dev-master"
+       }
+   }
+
+### Other method
+
+Clone the repository and include the autoloader.
+
+    <?php
+
+    require_once 'path/to/fluent-interface/bin/autoload.php';
+
 ## Basic Usage
 
-### Non fluid class
+### Non fluent class
 
     <?php
     //sample_class.php
@@ -62,7 +81,7 @@ If you can think of a legitimate use for this library, I would like to know.
         }
     }
 
-### Create fluid proxy
+### Create fluent proxy
 
     <?php
 
