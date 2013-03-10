@@ -79,3 +79,6 @@ If you can think of a legitimate use for this library, I would like to know.
     $foobar->setFirstName('Sam')->setLastName('Williams');
 
     echo $foobar->getFirstName() . ' ' . $foobar->getLastName();
+
+## Build Status
+[![Build Status](https://travis-ci.org/samuelwilliams/fluent-interface.png?branch=master)](https://travis-ci.org/samuelwilliams/fluent-interface)
