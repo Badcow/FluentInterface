@@ -1,6 +1,6 @@
 <?php
 /*
- * This file is part of the Fluid Interface Library.
+ * This file is part of the Fluent Interface Library.
  *
  * (c) Samuel Williams <sam@badcow.co>
  *
@@ -8,7 +8,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Badcow\FluidInterface;
+namespace Badcow\FluentInterface;
 
 class MethodAnalyser
 {
@@ -50,6 +50,7 @@ class MethodAnalyser
      */
     protected function stripPhpComments($string)
     {
+        $string = preg_replace('/#.*$/m', '', $string);
         $string = preg_replace('/\/\/.*$/m', '', $string);
         $string = preg_replace('/\/\*.*(?=\*\/)\*\//s', '', $string);
 
@@ -57,11 +58,12 @@ class MethodAnalyser
     }
 
     /**
-     * @todo Make this smarter
+     * Determine if there is a return control
+     *
      * @return bool
      */
     public function hasReturnLogic()
     {
-        return (preg_match('/return/i', $this->methodLogic) === 1);
+        return (preg_match('/[\)\{:;\?](?:\s)?+return(\s|;)/i', $this->methodLogic) === 1);
     }
 }

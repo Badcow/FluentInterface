@@ -1,7 +1,12 @@
-Badcow Fluid Interface
-======================
+Badcow Fluent Interface
+=======================
 
-Turns methods of any non-final class that do not return anything into chainable, fluid interfaces.
+Turns methods of any non-final class that do not return anything into chainable, fluent interfaces.
+
+## Disclaimer
+
+This is a joke. I made this library after an argument with the senior dev who doesn't like fluent interfaces.
+If you can think of a legitimate use for this library, I would like to know.
 
 ## Basic Usage
 
@@ -61,13 +66,16 @@ Turns methods of any non-final class that do not return anything into chainable,
 
     <?php
 
-    use Badcow\FluidInterface\FluidInterface;
+    use Badcow\FluentInterface\FluentInterface;
 
-    $fi = new FluidInterface(__DIR__ . '/Proxies');
-    $proxy = $fi->create('Sour\Milk\Foobar');
+    //Set the directory where to store the proxy classes
+    $fi = new FluentInterface(__DIR__ . '/Proxies');
+
+    //Create a proxy class. The second parameter forces the recreation of the file.
+    $proxy = $fi->create('Sour\Milk\Foobar', true);
     $foobar = new $proxy();
 
-    //Class is now a fluid interface
+    //Class is now a fluent interface
     $foobar->setFirstName('Sam')->setLastName('Williams');
 
     echo $foobar->getFirstName() . ' ' . $foobar->getLastName();

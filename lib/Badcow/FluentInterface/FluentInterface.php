@@ -1,6 +1,6 @@
 <?php
 /*
- * This file is part of the Fluid Interface Library.
+ * This file is part of the Fluent Interface Library.
  *
  * (c) Samuel Williams <sam@badcow.co>
  *
@@ -8,9 +8,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Badcow\FluidInterface;
+namespace Badcow\FluentInterface;
 
-class FluidInterface
+class FluentInterface
 {
     /**
      * The path where the proxy classes are stored

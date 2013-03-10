@@ -1,15 +1,18 @@
 {
-    "name": "badcow/fluid-interface",
+    "name": "badcow/fluent-interface",
     "authors": [
         {
             "name": "Sam Williams",
             "email": "sam@badcow.co"
         }
     ],
-    "description": "Turns methods of any non-final class that do not return anything into chainable, fluid interfaces.",
+    "description": "Turns methods of any non-final class that do not return anything into chainable, fluent interfaces.",
     "license": "MIT",
     "require": {
 
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*"
     },
     "autoload": {
         "psr-0": { "": "lib/" }
