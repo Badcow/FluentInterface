@@ -12,12 +12,12 @@ If you can think of a legitimate use for this library, I would like to know.
 
 ### Using composer
 
-   //composer.json
-   {
-       "require": {
-           "badcow/fluent-interface": "dev-master"
-       }
-   }
+    //composer.json
+    {
+        "require": {
+            "badcow/fluent-interface": "dev-master"
+        }
+    }
 
 ### Other method
 
