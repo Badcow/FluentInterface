@@ -16,9 +16,10 @@ class FluentInterfaceTest extends TestCase
 {
     public function testGenerate()
     {
-        $fi = new FluentInterface($this->tmp_dir);
+        $fi = new FluentInterface($this->tmpDir);
         $proxy_class = $fi->create('Badcow\FluentInterface\Tests\TestClass', true);
+        $this->tmpFiles[] = $fi->fqcn2Filename($proxy_class);
         $class = new $proxy_class();
-        $this->assertInstanceOf('Badcow\FluentInterface\Tests\TestClass', $class->setLastName('Doe'));
+        $this->assertInstanceOf('Badcow\FluentInterface\Tests\TestClass', $class->{'setLastName'}('Doe'));
     }
 }
