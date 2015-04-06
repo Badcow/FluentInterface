@@ -19,14 +19,6 @@ If you can think of a legitimate use for this library, I would like to know.
         }
     }
 
-### Other method
-
-Clone the repository and include the autoloader.
-
-    <?php
-
-    require_once 'path/to/fluent-interface/bin/autoload.php';
-
 ## Basic Usage
 
 ### Non fluent class
@@ -98,6 +90,13 @@ Clone the repository and include the autoloader.
     $foobar->setFirstName('Sam')->setLastName('Williams');
 
     echo $foobar->getFirstName() . ' ' . $foobar->getLastName();
+
+## Running the test suite
+The test suite is run using PHPUnit.
+
+    $ cd /path/to/badcow-fluent/interface/
+    $ composer install
+    $ phpunit .
 
 ## Build Status
 [![Build Status](https://travis-ci.org/samuelwilliams/fluent-interface.png?branch=master)](https://travis-ci.org/samuelwilliams/fluent-interface)

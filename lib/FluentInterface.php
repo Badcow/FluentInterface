@@ -65,7 +65,7 @@ class FluentInterface
      * @param string $fqcn
      * @return string
      */
-    protected function fqcn2Filename($fqcn)
+    public function fqcn2Filename($fqcn)
     {
         $filename = str_replace('\\', '_', ltrim($fqcn, '\\')) . '.php';
 

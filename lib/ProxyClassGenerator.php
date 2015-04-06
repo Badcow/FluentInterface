@@ -27,6 +27,15 @@ class ProxyClassGenerator
      */
     private $proxyNamespace;
 
+    private $skippedMethods = array(
+        '__sleep'   => true,
+        '__clone'   => true,
+        '__wakeup'  => true,
+        '__get'     => true,
+        '__set'     => true,
+        '__isset'   => true,
+    );
+
     /**
      * @var string
      */
@@ -91,21 +100,13 @@ STRING;
         $methods           = '';
         $methodNames       = array();
         $reflectionMethods = $class->getMethods(\ReflectionMethod::IS_PUBLIC);
-        $skippedMethods    = array(
-            '__sleep'   => true,
-            '__clone'   => true,
-            '__wakeup'  => true,
-            '__get'     => true,
-            '__set'     => true,
-            '__isset'   => true,
-        );
 
         foreach ($reflectionMethods as $method) {
             $name = $method->getName();
 
             if (
                 $method->isConstructor() ||
-                isset($skippedMethods[strtolower($name)]) ||
+                isset($this->skippedMethods[strtolower($name)]) ||
                 isset($methodNames[$name]) ||
                 $method->isFinal() ||
                 $method->isStatic() ||
